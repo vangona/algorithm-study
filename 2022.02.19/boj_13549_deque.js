@@ -4,7 +4,7 @@
 // const fs = require('fs');
 // const [n, k] = fs.readFileSync('/dev/stdin').toString().trim().split(' ').map(el => el * 1);
 
-const [n, k] = [0, 100000];
+const [n, k] = [5, 17];
 
 class Node {
     constructor(item) {
@@ -22,30 +22,29 @@ class Deque {
     }
 
     push(item) {
-        const newNode = new Node(item);
+        const node = new Node(item);
 
         if (this.size === 0) {
-            this.head = newNode;
-            this.tail = newNode;
+            this.head = node;
         } else {
-            this.tail.next = newNode;
-            newNode.prev = this.tail;
-            this.tail = newNode;
+            node.prev = this.tail;
+            this.tail.next = node;
         }
+        this.tail = node;
 
         this.size += 1;
     }
 
     unshift(item) {
-        const newNode = new Node(item);
+        const node = new Node(item);
 
         if (this.size === 0) {
-            this.head = newNode;
-            this.tail = newNode;
+            this.head = node;
+            this.tail = node;
         } else {
-            newNode.next = this.head;
-            this.head.prev = newNode;
-            this.head = newNode;
+            node.next = this.head;
+            this.head.prev = node;
+            this.head = node;
         }
 
         this.size += 1;
@@ -55,7 +54,6 @@ class Deque {
         if (this.size === 0) {
             throw Error('크기가 0인 덱에서 shift 할 수 없습니다.')
         } else if (this.size === 1) {
-            // 덱의 크기가 1이면, 덱을 초기화한다.
             const shiftedItem = this.head.item;
 
             this.head = null;
@@ -64,7 +62,6 @@ class Deque {
 
             return shiftedItem;
         } else if (this.size === 2) {
-            // 덱의 사이즈가 2이면, 
             const shiftedItem = this.head.item;
 
             this.head = this.head.next;
@@ -75,7 +72,7 @@ class Deque {
         } else if (this.size > 2) {
             const shiftedItem = this.head.item;
 
-            this.head.next.prev = null;
+            this.head.prev = null;
             this.head = this.head.next;
             this.size -= 1;
 
@@ -89,42 +86,36 @@ function bfs(n, k) {
     if (n === k) return 0;
 
     // 방문시 최대 값을 적어준다. 
-    const MAX_POINT = 100000;
+    const MAX_POINT = n;
+
+    // 방문을 위한 덱 선언
     const willVisit = new Deque();
 
     // 최소 시간을 구하는 문제이기 때문에, 방문한 지점을 다시 방문할 필요가 없음.
-    let visited = new Array(MAX_POINT + 1).fill(0);
+    let visited = new Array(MAX_POINT + 1);
 
-    goPoint(n);
-    
+    // 첫번째 지점에서 출발함.
+    visited[n] = true;
+    willVisit.push(n);
+
+    console.log(willVisit.size);
+
+    // bfs 몸체 실행
     while (willVisit.size) {
         const point = willVisit.shift();
 
-        if (point === k) {
-            return visited[point]; 
-        }
-        
-        goPoint(point);
-    }
+        const nextArr = [point * 2, point + 1, point - 1];
 
-    // point에 가보기
-    function goPoint(point) {         
-        if (checkPoint(point * 2)) {
-            willVisit.unshift(point * 2);
-            visited[point * 2] = visited[point];
-        } 
-        
-        if (n !== 1 || k !== 2) {
-            if (checkPoint(point + 1)) {
-                willVisit.push(point + 1);
-                visited[point + 1] = visited[point] + 1;
-            }
+        for (next of nextArr) {
+            if (checkPoint(next)) {
+                if (next === point * 2) {
+                    willVisit.unshift(next);
+                } else {
+                    willVisit.push(next);
+                }
+                visited[next] = true;
+            } 
         }
-            
-        if (checkPoint(point - 1)) {
-            willVisit.push(point - 1);
-            visited[point - 1] = visited[point] + 1;
-        } 
     }
     
     // 갈 포인트가 범위 내에 있는지, 방문하지는 않았는지 확인.
