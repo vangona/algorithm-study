@@ -3,7 +3,7 @@
 // const fs = require('fs');
 // let [numbers, ...board] = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
-let [numbers, ...board] = ['2 2', 'BB', 'BB'];
+let [numbers, ...board] = ['2 2', 'AB', 'BB'];
 
 const [N, M] = numbers.split(' ').map(el => el * 1);
 board = board.map(line => line.split(''));
@@ -20,7 +20,7 @@ for (let i = 0; i < N; i++) {
     startIndex = [i, j];
     visited[i][j] = true;
     dfs(1, i, j);
-
+    visited[i][j] = false;
     if (yesFlag) break;
   }
 }
