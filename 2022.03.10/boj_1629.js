@@ -1,7 +1,7 @@
 // 1629번 곱셈
 
 // const fs = require('fs');
-// const [A, B, C] = fs.readFileSync('/dev/stdin').toString().trim().split(' ').map(el => el * 1);
+// const [A, B, C] = fs.readFileSync('/dev/stdin').toString().trim().split(' ').map(el => BigInt(el));
 
 const [A, B, C] = ['10', '11', '12'].map(el => BigInt(el));
 
