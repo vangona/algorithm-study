@@ -38,10 +38,16 @@ function solveProblem() {
 
 function rotateMatrix(matrix) {
   const rotatedMatrix = Array.from({ 
-    length: matrix.length 
+    length: N
   }, () => Array.from({ 
-    length: matrix[0].length 
+    length: M
   }));
 
-
+  for (let i = 0; i < N; i++) {
+    for (let j = 0; j < M; j++) {
+      if (i <= N / 2 - 1) {
+        
+      }
+    }
+  }
 }
