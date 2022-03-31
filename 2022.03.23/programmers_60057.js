@@ -78,11 +78,13 @@ function compressStr(str) {
     }
   }
 
+  // 마지막 문자열을 추가해준다.
   if (count > 1) {
     compressedStr += count + repeatStr;
   } else {
     compressedStr += repeatStr;
   }
 
+  // 압축 문자열의 길이를 반환
   return compressedStr.length;
 }
