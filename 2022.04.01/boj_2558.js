@@ -1,0 +1,1 @@
+console.log(require('fs').readFileSync('/dev/stdin').toString().trim().split('\n').map(el => el * 1).reduce((curr, acc) => curr + acc));
