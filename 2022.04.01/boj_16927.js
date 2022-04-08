@@ -1,28 +1,14 @@
-// 16926번 배열 돌리기 1
+// 16927번 배열 돌리기 2
 
-// const fs = require('fs');
-// let [numbers, ...A] = fs.readFileSync('/dev/stdin')
-//   .toString()
-//   .trim()
-//   .split('\n')
-//   .map(line => (
-//     line.split(' ')
-//     .map(el => el * 1)
-//   ));
-// const [N, M, R] = numbers;
-
-let [numbers, ...A] = [
-  '5 4 14',
-  '1 2 3 4',
-  '7 8 9 10',
-  '13 14 15 16',
-  '19 20 21 22',
-  '25 26 27 28'
-].map(line => (
-  line.split(' ')
-  .map(el => el * 1)
-));
-
+const fs = require('fs');
+let [numbers, ...A] = fs.readFileSync('/dev/stdin')
+  .toString()
+  .trim()
+  .split('\n')
+  .map(line => (
+    line.split(' ')
+    .map(el => el * 1)
+  ));
 const [N, M, R] = numbers;
 
 rotateMatrix(A, R);
@@ -34,6 +20,7 @@ function rotateMatrix(matrix, R) {
 
   // 테두리 별로 회전시킴
   for (let i = 0; i < Math.min(N, M) / 2; i++) {
+    // 각 테두리별 회전 횟수를 계산해서 회전
     const computedR = R % ((N - 2 * i - 1) * 2 + (M - 2 * i - 1) * 2);
     let count = 0;
     while (count < computedR) {

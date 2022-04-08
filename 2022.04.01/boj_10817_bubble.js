@@ -1,11 +1,9 @@
 // 10817번 세 수
 
-// const numbers = require('fs').readFileSync('/dev/stdin').toString().split(' ').map(el => el * 1);
-
-const numbers = [10, 2, 3];
+const numbers = require('fs').readFileSync('/dev/stdin').toString().split(' ').map(el => el * 1);
 
 bubbleSort(numbers);
-console.log(numbers);
+console.log(numbers[1]);
 
 function bubbleSort (numbers) {
   const ARR_LENGTH = numbers.length;

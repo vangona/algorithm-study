@@ -1,11 +1,9 @@
-// 2442번 별 찍기 5
+// 2446번 별 찍기 9
 
-// const n = require('fs')
-//   .readFileSync('/dev/stdin')
-//   .toString()
-//   .trim() * 1;
-
-const n = 5;
+const n = require('fs')
+  .readFileSync('/dev/stdin')
+  .toString()
+  .trim() * 1;
 
 console.log(printStar());
 

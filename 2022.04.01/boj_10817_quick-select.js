@@ -4,7 +4,7 @@
 
 const numbers = [10, 20, 30];
 
-const number = quickSelect(numbers, 1, 0, 2);
+const number = quickSelect(numbers, 1, 0, numbers.length - 1);
 console.log(number);
 
 function quickSelect (arr, kth, left, right) {

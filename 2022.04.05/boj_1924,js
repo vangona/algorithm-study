@@ -1,0 +1,13 @@
+// 1924번 2007년
+
+const [month, date] = require('fs')
+  .readFileSync('/dev/stdin')
+  .toString()
+  .trim()
+  .split(' ');
+
+const weekStr = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
+
+const day = new Date(`2007-${month}-${date}`).getDay();
+
+console.log(weekStr[day]);
