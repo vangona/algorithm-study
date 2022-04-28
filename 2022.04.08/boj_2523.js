@@ -1,11 +1,11 @@
 // 2523번 별 찍기 13
 
-// const N = require('fs')
-//   .readFileSync('/dev/stdin')
-//   .toString()
-//   .trim() * 1;
+const N = require('fs')
+  .readFileSync('/dev/stdin')
+  .toString()
+  .trim() * 1;
 
-const N = 3;
+// const N = 3;
 
 let answer = [];
 let tempArr = [];
