@@ -1,14 +1,12 @@
 // 2490번 윷놀이
 
-// const fs = require("fs");
-// const yutStates = fs
-//   .readFileSync("/dev/stdin")
-//   .toString()
-//   .trim()
-//   .split("\n")
-//   .map((el) => el.split(" "));
-
-const yutStates = ["0 1 0 1", "1 1 1 0", "1 0 1 0"];
+const fs = require("fs");
+const yutStates = fs
+  .readFileSync("/dev/stdin")
+  .toString()
+  .trim()
+  .split("\n")
+  .map((el) => el.split(" "));
 
 const answer = [];
 
@@ -20,7 +18,7 @@ console.log(answer.join("\n"));
 
 function checkYutState(yutState) {
   zeroNum = 0;
-  yutState.split(" ").forEach((yut) => {
+  yutState.forEach((yut) => {
     if (yut === "0") {
       zeroNum++;
     }

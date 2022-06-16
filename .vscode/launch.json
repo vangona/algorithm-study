@@ -5,11 +5,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "pwa-chrome",
+      "type": "pwa-node",
       "request": "launch",
-      "name": "Launch Chrome against localhost",
-      "url": "http://localhost:8080",
-      "webRoot": "${workspaceFolder}"
+      "name": "Launch Algorithm Test",
+      "program": "${workspaceFolder}/2022.05.10/2022-05-10-boj-slope.js"
     }
   ]
 }
