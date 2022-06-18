@@ -1,8 +1,8 @@
 # 알고리즘 공부
 
-[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?bo`j=yummygona)](https://solved.ac/yummygona/)
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?bo`j=yummygona)](https://solved.ac/user/yummygona/)  
 ![](https://tokei.rs/b1/github/vangona/algorithm-study)
-![](https://tokei.rs/b1/github/vangona/algorithm-study?category=files)
+![](https://tokei.rs/b1/github/vangona/algorithm-study?category=files)  
 
 문제 풀이를 중심으로 했던 알고리즘 공부.  
 컴퓨터 공학을 더 익히고 다시 풀이하려 한다.
