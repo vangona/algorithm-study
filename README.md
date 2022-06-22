@@ -1,6 +1,6 @@
 # 알고리즘 공부
 
-[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?bo`j=yummygona)](https://solved.ac/user/yummygona/)  
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=yummygona)](https://solved.ac/user/yummygona/)  
 ![](https://tokei.rs/b1/github/vangona/algorithm-study)
 ![](https://tokei.rs/b1/github/vangona/algorithm-study?category=files)  
 
