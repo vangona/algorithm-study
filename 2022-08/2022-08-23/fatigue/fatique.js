@@ -1,3 +1,5 @@
+
+
 function solution(n, works) {
   let answer = 0;
   works.sort((a, b) => b - a);
