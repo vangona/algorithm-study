@@ -40,8 +40,29 @@ published: true
 
 ### 문제풀이
 
+```js
+const getInclination = (dotA, dotB) => {
+  return (dotB[1] - dotA[1]) / (dotB[0] - dotA[0]);
+};
+
+function solution(dots) {
+  const combinations = [
+    [0, 1, 2, 3],
+    [0, 2, 1, 3],
+    [0, 3, 1, 2],
+  ];
+  const result = combinations.some(
+    (combination) =>
+      getInclination(dots[combination[0]], dots[combination[1]]) ===
+      getInclination(dots[combination[2]], dots[combination[3]])
+  );
+  return result ? 1 : 0;
+}
+```
+
 - 만들 수 있는 선의 개수는 4C2 / 2로 3개이다.
   - 4개 중 2개를 선택하나, 중복이 발생하기 때문
 - 평행하다는 것은 직선의 기울기가 일치하는 것이다.
 - 직선의 기울기 = y의 증가량 / x의 증가량
 - 하나만 일치하면 되기 때문에 some으로 확인해도 된다.
+- 조합으로 구해도 되겠지만, 개수가 3개 밖에 안되어서 오버엔지니어링이라는 생각이 들었다.
